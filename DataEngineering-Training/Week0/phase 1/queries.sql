@@ -6,19 +6,21 @@ CREATE TABLE customers (
 );
 
 INSERT INTO customers VALUES
-(1, 'Ganesh', 'Hyderabad', 23),
-(2, 'Hari', 'Chennai', 30),
-(3, 'Vihar', 'Bangalore', 27),
-(4, 'Varma', 'Hyderabad', 35),
-(5, 'Anil', 'Chennai', 22),
-(6, 'Kiran', 'Delhi', 29);
+(1, 'Ravi', 'Hyderabad', 25),
+(2, 'Sita', 'Chennai', 32),
+(3, 'Arun', 'Hyderabad', 28);
 
+-- 1. Show all customers
 SELECT * FROM customers;
 
+-- 2. Customers from Chennai
 SELECT * FROM customers WHERE city = 'Chennai';
 
+-- 3. Customers with age > 25
 SELECT * FROM customers WHERE age > 25;
 
+-- 4. Select name and city
 SELECT customer_name, city FROM customers;
 
+-- 5. Count customers city-wise
 SELECT city, COUNT(*) FROM customers GROUP BY city;
