@@ -4,10 +4,10 @@
 In Phase 1, we started learning PySpark and performed basic exercises using both SQL and PySpark DataFrame operations.
 
 ## Objective
-To understand how SQL queries can be implemented using PySpark and to get familiar with basic DataFrame operations like show(), filter(), select(), and groupBy().
+To understand basic SQL queries and implement them using PySpark DataFrame operations.
 
-## Dataset Used
-We created a sample dataset of customers with the following fields:
+## Dataset Description
+The dataset contains customer details:
 - customer_id
 - customer_name
 - city
@@ -15,23 +15,22 @@ We created a sample dataset of customers with the following fields:
 
 ## Approach
 - Created DataFrame using PySpark
-- Applied filtering conditions
-- Selected specific columns
-- Performed grouping and aggregation
+- Applied filtering operations
+- Selected required columns
+- Performed aggregation using groupBy()
 
-## Exercises Performed
-
-1. Show all customers  
-2. Show customers from Chennai  
-3. Show customers with age > 25  
-4. Show only customer_name and city  
-5. Count customers city-wise  
+## Exercises
+1. Show all customers
+2. Show customers from Chennai
+3. Show customers with age > 25
+4. Show only customer_name and city
+5. Count customers city-wise
 
 ## Learnings
 - Basics of PySpark DataFrame
-- Difference between SQL and PySpark
+- SQL vs PySpark operations
 - Filtering and selecting data
 - Aggregation using groupBy()
 
 ## Conclusion
-This phase helped build a strong foundation in PySpark and understanding how SQL logic can be applied using DataFrame operations.
+This phase helped in understanding how SQL queries can be implemented using PySpark.
