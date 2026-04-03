@@ -2,26 +2,34 @@ from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("Phase1").getOrCreate()
 
+#Create DataFrame (same as SQL table data)
 customers = spark.createDataFrame([
-    (1, "Ganesh", "Hyderabad", 23),
-    (2, "Hari", "Chennai", 30),
-    (3, "Vihar", "Bangalore", 27),
-    (4, "Varma", "Hyderabad", 35),
-    (5, "Anil", "Chennai", 22),
-    (6, "Kiran", "Delhi", 29)
+    (1, "Ravi", "Hyderabad", 25),
+    (2, "Sita", "Chennai", 32),
+    (3, "Arun", "Hyderabad", 28)
 ], ["customer_id", "customer_name", "city", "age"])
 
-print("All Customers")
+
+SELECT * FROM customers;
+print("1. Show all customers")
 customers.show()
 
-print("Customers from Chennai")
+
+SELECT * FROM customers WHERE city = 'Chennai';
+print("2. Customers from Chennai")
 customers.filter(customers.city == "Chennai").show()
 
-print("Customers age > 25")
+
+SELECT * FROM customers WHERE age > 25;
+print("3. Customers with age > 25")
 customers.filter(customers.age > 25).show()
 
-print("Selected Columns")
+
+SELECT customer_name, city FROM customers;
+print("4. Select name and city")
 customers.select("customer_name", "city").show()
 
-print("City-wise Count")
+
+SELECT city, COUNT(*) FROM customers GROUP BY city;
+print("5. Count customers city-wise")
 customers.groupBy("city").count().show()
